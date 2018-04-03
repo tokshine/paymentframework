@@ -1,0 +1,37 @@
+﻿@model Workwiz.PaymentFramework.TestWeb.Models.PaymentSuccessResponse
+
+@{
+    ViewBag.Title = "PaymentSuccess";
+}
+
+
+<div>
+    <h2>Payment Success</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            Reference
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference)
+        </dd>
+
+        <dt>
+           Receipt Id
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptId)
+        </dd>
+
+        <dt>
+            Amount
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+</div>
+

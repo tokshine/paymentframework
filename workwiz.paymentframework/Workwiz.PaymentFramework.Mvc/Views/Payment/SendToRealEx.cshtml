@@ -1,0 +1,53 @@
+﻿@using Workwiz.PaymentFramework.Mvc.RealEx
+@using Workwiz.PaymentFramework.Shared
+@using Workwiz.PaymentFramework.Shared.RealexApi
+@model Workwiz.PaymentFramework.Mvc.Models.RealExPaymentTransfer
+
+<form action="@Model.ProviderUrl" method="post" name="paymentForm">
+    <input type="hidden" name="@RealexFields.RealexFieldResponseUrl" value="@Model.ReturnUrl" />
+    <input type="hidden" name="@RealexFields.RealexFieldMerchantId" value="@Model.MerchantId" />
+    <input type="hidden" name="@RealexFields.RealexFieldOrderId" value="@Model.OrderId" />
+    <input type="hidden" name="@RealexFields.RealexFieldAmount" value="@Model.Amount" />
+    <input type="hidden" name="@RealexFields.RealexFieldCurrency" value="@Model.Currency" />
+    <input type="hidden" name="@RealexFields.RealexFieldTimestamp" value="@Model.Timestamp" />
+    <input type="hidden" name="@RealexFields.RealexFieldHashSignature" value="@Model.Sha1Hash" />
+    @if (!string.IsNullOrEmpty(Model.Account))
+    {
+        <input type="hidden" name="@RealexFields.RealexFieldSubAccount" value="@Model.Account" />
+    }
+    @if (Model.AutoSettleFlag.HasValue)
+    {
+        <input type="hidden" name="@RealexFields.RealexFieldAutoSettle" value="@(Model.AutoSettleFlag.Value ? '1' : '0')" />
+    }
+    @if (!string.IsNullOrEmpty(Model.Comment1))
+    {
+        <input type="hidden" name="@RealexFields.RealexFieldComment1" value="@Model.Comment1" />
+    }
+    @if (!string.IsNullOrEmpty(Model.Comment2))
+    {
+        <input type="hidden" name="@RealexFields.RealexFieldComment2" value="@Model.Comment2" />
+    }
+    @if (!string.IsNullOrEmpty(Model.CustomerNumber))
+    {
+        <input type="hidden" name="@RealexFields.RealexFieldCustomerNumber" value="@Model.CustomerNumber" />
+    }
+    @if (!string.IsNullOrEmpty(Model.VariableReference))
+    {
+        <input type="hidden" name="@RealexFields.RealexFieldVarRef" value="@Model.VariableReference" />
+    }
+    @if (!string.IsNullOrEmpty(Model.ProductId))
+    {
+        <input type="hidden" name="@RealexFields.RealexFieldProductId" value="@Model.ProductId" />
+    }
+    @if (Model.HasSavedCard)
+    {
+        <input type="hidden" name="@RealexFields.RealVaultFieldSaveCard" value="@(Model.CardStorageEnabled ? '1' : '0')"/>
+        <input type="hidden" name="@RealexFields.RealVaultFieldOfferSaveCard" value="@(Model.OfferSaveCard ? '1' : '0')" />
+        <input type="hidden" name="@RealexFields.RealVaultPayerRef" value="@Model.PayerReference" />
+        <input type="hidden" name="@RealexFields.RealVaultPaymentRef" value="@Model.PaymentReference" />
+        <input type="hidden" name="@RealexFields.RealVaultPayerExist" value="@(Model.PayerExists ? '1' : '0')" />
+    }
+</form>
+<script type="text/javascript">
+    document.forms['paymentForm'].submit();
+</script>

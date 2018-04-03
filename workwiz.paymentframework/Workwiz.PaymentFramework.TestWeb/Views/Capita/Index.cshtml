@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<br/>
+
+<ul>
+    <li><a href="UnitTests">Run UnitTests in web-context for Capita</a></li>
+</ul>
+
+@using (Html.BeginForm("ProcessPayment", "Capita"))
+{
+    <fieldset>
+        <p class="form-group">
+            <label for="amount">Amount: </label>
+            <input type="text" id="amount" name="amount" value="1234"/>
+        </p>
+        <p class="form-group">
+            <input type="submit" value="Pay"/>
+        </p>
+    </fieldset>
+}
+

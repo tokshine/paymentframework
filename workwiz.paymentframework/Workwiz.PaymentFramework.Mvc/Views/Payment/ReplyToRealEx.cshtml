@@ -1,0 +1,34 @@
+﻿@model Workwiz.PaymentFramework.Mvc.Models.RealExServerResponse
+
+<div style="width: 500px; border: 2px solid #9bba1f; margin-left: auto; margin-right: auto;
+                        padding:5px 0 5px 0; font-size: 11pt; font-weight: bold; text-align: center">
+    <table width="100%">
+        <tr>
+            <td style="width: 20px" align="right">
+                <img src="@Model.ImagePath" />
+            </td>
+            <td>
+                @Html.Raw(Model.ConfigDescription)
+            </td>
+        </tr>
+        @{
+            if (!String.IsNullOrEmpty(Model.AdditionalSuccessMessage))
+            {
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.Raw(Model.AdditionalSuccessMessage)
+                    </td>
+                </tr>
+            }
+        }
+        <tr>
+            <td></td>
+            <td>
+                @Html.Raw(Model.MainResult)
+                <br/>
+                <a href="@Model.NextUrl">Return to your account</a>
+            </td>
+        </tr>
+    </table>
+</div>

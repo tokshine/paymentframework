@@ -1,0 +1,26 @@
+<configuration>
+	<configSections>
+	    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="Workwiz.PaymentFramework.Shared.RealEx" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+            <section name="Workwiz.PaymentFramework.Shared.Civica" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+	</configSections>    
+	<applicationSettings>
+        <Workwiz.PaymentFramework.Shared.RealEx>
+            <setting name="RealExPostUrl" serializeAs="String">
+                <value>http://localhost:2437/Realex/epage.cgi.aspx</value>
+            </setting>
+        </Workwiz.PaymentFramework.Shared.RealEx>
+        <Workwiz.PaymentFramework.Shared.Civica>
+            <setting name="CivicaAppId" serializeAs="String">
+                <value>CIT_AI_CIVIC_eBOOKINGS_V1</value>
+            </setting>
+            <setting name="CivicaPostUrl" serializeAs="String">
+                <value>http://localhost:2437/CivicaIcon/WebForm1.aspx</value>
+            </setting>
+            <setting name="CivicaQueryUrl" serializeAs="String">
+                <value>http://localhost:2437/CivicaIcon/QueryAuthRequests.asmx</value>
+            </setting>
+        </Workwiz.PaymentFramework.Shared.Civica>
+    </applicationSettings>	
+</configuration>

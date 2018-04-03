@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://altsql71/XMLSchema/epayments/standard" elementFormDefault="qualified" targetNamespace="http://altsql71/XMLSchema/epayments/standard" id="schema2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ReqMessage" type="tns:ReqMessage" />
+  <xs:complexType name="ReqMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CallingApplicationIdentifier" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CriteraList" type="tns:CriteriaStructure" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pageNum" type="xs:integer" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pageSize" type="xs:integer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CriteriaStructure">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Column" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Value" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Operator" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="BooleanOp" type="tns:AndOr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AndOr">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="And" />
+      <xs:enumeration value="Or" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RespMessage" type="tns:RespMessage" />
+  <xs:complexType name="RespMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentList" type="tns:PaymentStructure" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PaymentListCount" type="xs:integer" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseDescription" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentStructure">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OriginatorsReference" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LineNumber" type="xs:integer" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RequestDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RequestMessage" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RequestStatus" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CallingApplicationIdentifier" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CallingApplicationTransactionReference" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AccountReference" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AccountType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AccountMethodOfPayment" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AccountPaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AccountPaymentNarrative" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardStartDate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardEndDate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardIssueNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MerchantNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GeneralLedgerCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IncomeManagementReceiptNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PaymentAuthorisationCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardScheme" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TranType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ICCAppID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ICCAppEffDate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ICCAppExpDate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ICCAppPanSeq" type="xs:integer" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RefundTransactionRef" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHNPResultCode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VAT" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VATCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHBusinessName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHPremiseNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHPremiseName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHStreet" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHArea" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHTown" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHCounty" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CHPostCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PLName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PLBusinessName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PLPremiseNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PLPremiseName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PLStreet" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PLArea" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PLTown" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PLCounty" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PLPostcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TrueAccountReference" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CryptoMethod" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TransactionCharge" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FullCardAmount" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SourceReferralFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ICCCTType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ICCPreferredCardName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

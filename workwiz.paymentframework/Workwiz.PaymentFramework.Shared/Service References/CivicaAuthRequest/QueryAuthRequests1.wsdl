@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:i0="http://tempuri.org/QueryAuthRequests/Service1" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/QueryAuthRequests/Service1" location="http://localhost:2437/CivicaIcon/QueryAuthRequests.asmx?wsdl=wsdl1" />
+  <wsdl:types>
+    <s:schema targetNamespace="http://tempuri.org/">
+      <s:import schemaLocation="http://localhost:2437/CivicaIcon/QueryAuthRequests.asmx?schema=schema1" namespace="http://tempuri.org/QueryAuthRequests/Service1" />
+      <s:import schemaLocation="http://localhost:2437/CivicaIcon/QueryAuthRequests.asmx?schema=schema2" namespace="http://altsql71/XMLSchema/epayments/standard" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:service name="QueryAuthRequests">
+    <wsdl:port name="QueryAuthRequestSrvSoap" binding="i0:QueryAuthRequestSrvSoap">
+      <soap:address location="http://localhost:2437/CivicaIcon/QueryAuthRequests.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QueryAuthRequestSrvSoap1" binding="i0:QueryAuthRequestSrvSoap1">
+      <soap12:address location="http://localhost:2437/CivicaIcon/QueryAuthRequests.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

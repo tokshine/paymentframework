@@ -1,0 +1,19 @@
+﻿@model Workwiz.PaymentFramework.Mvc.Models.CivicaPaymentTransfer
+
+<form action="@Model.ProviderUrl" method="post" name="paymentForm">
+    <input type="hidden" name="ReturnURL" value="@Model.ReturnUrl"/>
+    <input type="hidden" name="PaymentSourceCode" value="@Model.PaymentSourceCode"/>
+    <input type="hidden" name="CallingApplicationID" value="@Model.CallingApplicationId"/>
+    <input type="hidden" name="CallingApplicationTransactionReference" value="@Model.CallingApplicationTransactionReference"/>
+    <input type="hidden" name="GeneralLedgerCode" value="@Model.GeneralLedgerCode"/>
+    <input type="hidden" name="PaymentTotal" value="@Model.PaymentTotal"/>
+    @foreach (var line in Model.PaymentLines)
+    {
+        <input type="hidden" name="Payment_@(Model.PaymentLines.IndexOf(line)+ 1)" value="@Model.PaymentLines[Model.PaymentLines.IndexOf(line)]" />
+    }
+    
+   
+</form>
+<script type="text/javascript">
+    document.forms['paymentForm'].submit();
+</script>

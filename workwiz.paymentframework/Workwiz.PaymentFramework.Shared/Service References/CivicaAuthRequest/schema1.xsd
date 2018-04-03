@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/QueryAuthRequests/Service1" elementFormDefault="qualified" targetNamespace="http://tempuri.org/QueryAuthRequests/Service1" id="schema1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://altsql71/XMLSchema/epayments/standard" />
+  <xs:element name="Query">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://altsql71/XMLSchema/epayments/standard" minOccurs="0" maxOccurs="1" ref="q1:ReqMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://altsql71/XMLSchema/epayments/standard" minOccurs="0" maxOccurs="1" ref="q2:RespMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

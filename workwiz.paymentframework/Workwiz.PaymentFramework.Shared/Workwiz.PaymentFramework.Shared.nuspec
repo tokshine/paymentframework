@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <!-- to upload to Workwiz VSTS package feed: -->
+  <!-- Rebuild in "Release", "Any CPU" configuration : the msbuild will automatically create a new file in the Builds folder -->
+  <!-- Open Tools -> "NuGet Package Manager" -> "Package Manager Console" and then run the following command, substituting the correct nupkg file name to upload-->
+  <!-- .tools\nuget.exe push -source workwiz-vsts -ApiKey VSTS .\Builds\Workwiz.PaymentFramework.X.X.X.X.nupkg-->
+  <metadata>
+    <id>Workwiz.PaymentFramework</id>
+    <version>$version$</version>
+    <title>Workwiz Payment Framework</title>
+    <authors>$author$</authors>
+    <owners>Workwiz Ltd</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>My package description.</description>
+    <summary>A framework to interact with third party payment systems</summary>
+    <dependencies>
+    </dependencies>
+    <copyright>Copyright 2017 Workwiz Ltd</copyright>
+    <tags>Payment Realex Civica Capita</tags>
+  </metadata>
+</package>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Workwiz.PaymentFramework.Shared" GeneratedClassName="Capita">
+  <Profiles />
+  <Settings>
+    <Setting Name="CapitaWebServiceUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://sbs.e-paycapita.com/scp/scpws/scpClient</Value>
+    </Setting>
+    <Setting Name="FundCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">31</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,28 @@
+﻿@model List<Workwiz.PaymentFramework.TestWeb.Models.PaymentWebUnitTestViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<h1>Unit test results:</h1>
+<div>
+    <table>
+        @foreach (var testResult in Model)
+        {
+            <tr>
+                <th>@Html.Encode(testResult.MethodName)</th>
+                <td>@testResult.DidPass</td>
+                <td>@testResult.Message</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>

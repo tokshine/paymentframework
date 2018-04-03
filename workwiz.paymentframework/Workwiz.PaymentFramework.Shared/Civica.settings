@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Workwiz.PaymentFramework.Shared" GeneratedClassName="Civica">
+  <Profiles />
+  <Settings>
+    <Setting Name="CivicaAppId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CIT_AI_CIVIC_eBOOKINGS_V1</Value>
+    </Setting>
+    <Setting Name="CivicaPostUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2437/CivicaIcon/WebForm1.aspx</Value>
+    </Setting>
+    <Setting Name="CivicaQueryUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2437/CivicaIcon/QueryAuthRequests.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

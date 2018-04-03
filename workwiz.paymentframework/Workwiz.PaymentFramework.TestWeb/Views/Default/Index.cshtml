@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<br/>
+
+<ul>
+    <li><a href="UnitTests">Run UnitTests in web-context</a></li>
+    <li><a href="/Default/TestBackEndApi">Test BackEnd Api</a></li>
+</ul>
+
+@using (Html.BeginForm("ProcessPayment", "Default"))
+{
+    <fieldset>
+        <p class="form-group">
+            <label for="amount">Amount: </label>
+            <input type="text" id="amount" name="amount"/>
+        </p>
+        <p class="form-group">
+            <input type="submit" value="Pay"/>
+        </p>
+    </fieldset>
+}
+
